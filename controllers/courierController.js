@@ -18,6 +18,7 @@ var courierController = {
 			}
 
 			res.send(201, 'Success!');
+			// res.redirect('/courier');
 		})
 	}
 
