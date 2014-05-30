@@ -1,6 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose =  require('mongoose');
+var courierController = require('./controllers/courierController.js')
+
 
 var app = express();
 app.set('view engine', 'jade');
@@ -14,9 +16,11 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
-app.get('/create', function(req, res) {
-	res.render('create');
+app.get('/courier', function(req, res) {
+	res.render('courier');
 });
+
+app.post('/courier', courierController.create);
 
 var server = app.listen(5820, function() {
 	console.log('Express server listening on port ' + server.address().port);
