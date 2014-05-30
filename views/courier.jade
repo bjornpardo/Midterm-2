@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	h1 Add Courier
+	form#add-courier(action="/courier", method="post")		
+		div.form-inline
+			input(class="form-control input-lg search" type="text", name="capable")
+			input(class="form-control input-lg search" type="text", name="default")
+			button.btn.btn-default.btn-lg(type='submit') Add
+				
