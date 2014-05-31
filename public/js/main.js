@@ -3,17 +3,32 @@ console.log('test');
 
 
 	$('.add').on('click', function() {
+		console.log($(this).attr('class'));
+		var clicked = $(this).attr('class');
 
 		$(this).parent().addClass('active').siblings().removeClass('active');
 
 		console.log($(this).parent());
-		$('.cForms').removeClass('hidden').each(function(el, index) {
+		$('.cForms').addClass('hidden').each(function(el, index) {
 			console.log($(this));
-			$(this).siblings.addClass('hidden')
-			
-
+			console.log(clicked);
+			if($(this).attr('id')===clicked){
+				$(this).removeClass('hidden')
+			}
 		});
-			// console.log('unpaid');
 	});
 
+	$('.edit').on('click', function() {
+		var clicked = $(this).attr('class');
+
+		$(this).parent().addClass('active').siblings().removeClass('active');
+
+		console.log($(this).parent());
+		$('.cForms').addClass('hidden').each(function(el, index) {
+			console.log($(this));
+			if($(this).attr('id')===clicked){
+				$(this).removeClass('hidden')
+			}
+		});
+	});
 });
