@@ -1,4 +1,38 @@
 extends layout
 
 block content
-	h1 Hello Boulder!
+	div#wrapper
+		div#sidebar-wrapper
+			ul.sidebar-nav
+				li.sidebar-brand
+					a(href='#')
+						img.xend-logo(src='http://s30.postimg.org/rxswoaadd/xend.jpg')
+				li
+					a(href='#')
+						i.fa.fa-tachometer
+						|  Dashboard
+
+				li
+					a(href='#')
+						i.fa.fa-check-square
+						|  Courier Assignment
+
+				li
+					a(href='#')
+						i.fa.fa-plus-circle
+						|  Add Couriers
+
+				li
+					a(href='#')
+						i.fa.fa-users
+						|  Manage Couriers
+
+				li
+					a(href='#')
+						i.fa.fa-building-o
+						|  Manage Areas
+
+				li
+					a(href='#')
+						i.fa.fa-wrench
+						|  Settings
