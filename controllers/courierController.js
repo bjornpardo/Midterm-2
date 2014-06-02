@@ -10,7 +10,7 @@ var courierController = {
 				courierNames.push(docs[i].name);
 			};
 			console.log(courierNames);
-			res.render('courier',{names:docs});
+			res.render('courier',{names:courierNames});
 		});
 			
 	},
