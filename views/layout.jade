@@ -3,15 +3,45 @@ html(lang='en')
 	head
 		meta(charset="utf-8")
 		title Untitled
-		link(href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", rel="stylesheet")
+		link(href='//fonts.googleapis.com/css?family=Lato', rel='stylesheet')
+		link(href="/css/magic-bootstrap-min.css", rel="stylesheet")
 		link(href='/css/main.css', rel='stylesheet')
 		link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel='stylesheet')
-		link(href='//fonts.googleapis.com/css?family=Lato', rel='stylesheet')
 		//- script(language='javascript' src='http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js')
 
 
 	body
-		block content
+		div#wrapper
+			div#sidebar-wrapper
+				ul.sidebar-nav
+					li.sidebar-brand
+						a(href='#')
+							img.xend-logo(src='http://s30.postimg.org/rxswoaadd/xend.jpg')
+					li
+						a(href='/')
+							i.fa.fa-tachometer
+							|  Dashboard
+
+					li
+						a(href='/')
+							i.fa.fa-check-square
+							|  Courier Assignment
+
+					li
+						a(href='/courier')
+							i.fa.fa-users
+							|  Manage Couriers
+
+					li
+						a(href='/area')
+							i.fa.fa-building-o
+							|  Manage Areas
+
+					li
+						a(href='#')
+							i.fa.fa-wrench
+							|  Settings
+			block content
 		script(src='http://code.jquery.com/jquery-2.1.1.min.js')
 		script(src='http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.2/handlebars.min.js')
 		script(src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
