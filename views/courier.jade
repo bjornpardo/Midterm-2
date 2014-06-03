@@ -23,10 +23,14 @@ block content
 				button.btn.btn-default.btn-lg(type='submit') Add
 
 			form.cForms#edit.hidden(action="/courier/update" method="post")		
-				select(class="form-control input-lg search" type="text" name="name")
+				select(class="form-control input-lg search courier-select" type="text" name="name")
+					option Select courier
 					for courier in couriers
 						option #{courier.name}
-				input(class="form-control input-lg search" type="text" name="capableAreas" value="1,2,3,4,5,6")
-				input(class="form-control input-lg search" type="text" name="defaultAreas" value="1,2,3")
-				button.btn.btn-default.btn-lg(type='submit') Save
+				input(class="form-control input-lg search" type="text" name="capableAreasEdit")
+				input(class="form-control input-lg search" type="text" name="defaultAreasEdit")
+				button.btn.btn-default.btn-lg.save-btn(type='submit') Save
+
+	script.
+		var couriers = !{JSON.stringify(couriers)};
 				

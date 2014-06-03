@@ -31,4 +31,21 @@ console.log('test');
 			}
 		});
 	});
+
+	$(document).on('change', '.courier-select', function() {
+		// console.log($(this).val());
+		var selected = $(this).val();
+		console.log(selected);
+		for (var i = 0; i < couriers.length; i++) {
+			if(selected === couriers[i].name) {
+				$('[name="capableAreasEdit"]').val(couriers[i].capableAreas);
+				// $('[name="capableAreasEdit"]').attr("value", couriers[i].capableAreas);
+				console.log(couriers[i].capableAreas);
+				$('[name="defaultAreasEdit"]').val(couriers[i].defaultAreas);
+				console.log(couriers[i].defaultAreas);
+
+			}
+		};
+
+	});
 });

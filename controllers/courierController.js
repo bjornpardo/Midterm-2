@@ -20,12 +20,11 @@ var courierController = {
 			
 	},
 
-
 	create: function(req, res) {
-
 		var courier= new Courier({
 			name: req.body.name,
 			capableAreas: req.body.capableAreas,
+			// .split(/\w*,\w*/),
 			defaultAreas: req.body.defaultAreas
 		});
 
@@ -42,16 +41,21 @@ var courierController = {
 	},
 
 	update: function(req, res) {
-		var cAreas = req.body.capableAreas
-		var dAreas = req.body.defaultAreas
+		console.log(req.body);
+		var cAreas = req.body.capableAreasEdit
+		var dAreas = req.body.defaultAreasEdit
 
-		/*var findCourier = */Courier.update({name: req.body.name}, {$set: {capableAreas: cAreas, defaultAreas: dAreas}},function(err,doc) {
+		Courier.update({name: req.body.name}, {$set: {capableAreas: cAreas, defaultAreas: dAreas}},function(err,doc) {
 				if (err) {
 					throw err;
 				}
 
 				res.send(201, 'Success!');
 		});
+	},
+
+	data: function(req, res) {
+		Courier.find()
 	}
 
 };
