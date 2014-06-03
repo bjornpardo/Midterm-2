@@ -3,14 +3,19 @@ var Courier = require('../models/courier.js');
 var courierController = {
 
 	index: function(req, res) {
-		var courierNames = [];
-		var returnCouriers = Courier.find({name:{$exists:true}},function(err,docs){
+		// var courierNames = [];
+		/*var returnCouriers = */Courier.find({name:{$exists:true}},function(err,docs){
 			// console.log(docs.name);
-			for (var i = 0; i < docs.length; i++) {
-				courierNames.push(docs[i].name);
-			};
-			console.log(courierNames);
-			res.render('courier',{names:courierNames});
+			// for (var i = 0; i < docs.length; i++) {
+			// 	courierNames.push(docs[i].name);
+			console.log(docs);
+
+			res.render('courier',{couriers:docs});
+
+			// };
+			// console.log(courierNames);
+			// res.render('courier',{names:courierNames});
+
 		});
 			
 	},
@@ -40,7 +45,7 @@ var courierController = {
 		var cAreas = req.body.capableAreas
 		var dAreas = req.body.defaultAreas
 
-		var findCourier = Courier.update({name: req.body.name}, {$set: {capableAreas: cAreas, defaultAreas: dAreas}},function(err,doc) {
+		/*var findCourier = */Courier.update({name: req.body.name}, {$set: {capableAreas: cAreas, defaultAreas: dAreas}},function(err,doc) {
 				if (err) {
 					throw err;
 				}

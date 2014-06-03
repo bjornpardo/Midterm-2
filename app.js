@@ -18,13 +18,13 @@ app.get('/', function(req, res) {
 
 app.get('/courier', courierController.index);
 
-app.post('/courier', courierController.create);
+app.post('/courier/create', courierController.create);
+
+app.post('/courier/update', courierController.update);
 
 app.get('/area', function(req, res) {
 	res.render('area');
 });
-
-app.post('/edit', courierController.update);
 
 var server = app.listen(5820, function() {
 	console.log('Express server listening on port ' + server.address().port);
